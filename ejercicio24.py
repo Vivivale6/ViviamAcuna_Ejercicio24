@@ -7,22 +7,18 @@ y= np.ones(100)
 
 
 def fun(x, lamda):
-    
-    a = np.exp(-1.0/lamda)
-    b= np.exp(-20/lamda)
-    
-    return np.exp(-x/lamda)/(lamda*(a-b))
+      
+    return np.exp(-x/lamda)/(lamda*(np.exp(-1.0/lamda)-np.exp(-20.0/lamda)))
+c= len(medicion)
+
 
 contador=0.0
 for i in range(100):
-    for j in range(len(medicion)):
+    for j in range(c):
         y[i]= y[i]*(fun(medicion[j], x[i]))
             
-        contador+=y[i]
-        
-    return contador
-
-
+    contador+=y[i]
 y=y/contador
 
 plt.plot(x,y)
+plt.show()
