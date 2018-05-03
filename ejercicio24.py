@@ -18,7 +18,7 @@ def cuenta(y,c,x):
     contador=0.0
     for i in range(1000):
         for j in range(c):
-            y[i]= y[i]*(fun[j], x[i])
+            y[i]= y[i]*(fun([j], x[i]))
             
         contador+=y[i]
     return contador
