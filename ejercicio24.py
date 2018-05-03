@@ -8,7 +8,8 @@ y= np.ones(100)
 
 def fun(x, lamda):
       
-    return np.exp(-x/lamda)/(lamda*(np.exp(-1.0/lamda)-np.exp(-20.0/lamda)))
+    ca = 1.0/(np.exp(-1) - np.exp(-20))
+    return (ca/lamda)*np.exp(-x/lamda)
 c= len(medicion)
 
 
